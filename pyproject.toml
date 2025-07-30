@@ -1,5 +1,5 @@
 [build-system]
-requires = ["poetry-core>=1.0.0", "poetry-dynamic-versioning>=1.0.0,<2.0.0"]
+requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry_dynamic_versioning.backend"
 
 [project]
@@ -19,7 +19,7 @@ authors = [
 readme = "README.md"
 requires-python = ">3.9.1, <4.0"
 license = { text = "MIT" }
-dynamic = ["version"]
+version = "0.1.0"
 dependencies = [
   "xdg",
   "argcomplete==3.5.1",
@@ -36,22 +36,9 @@ dependencies = [
   "cryptography (>=44.0.2,<45.0.0)",
 ]
 
-[tool.poetry]
-packages = [{ include = "utils" }, { include = "vast.py" }]
-version = "0.0.0"
-
 [project.scripts]
 vastai = "vast:main"
 
 [project.urls]
 homepage = "https://cloud.vast.ai/"
 repository = "https://github.com/vast-ai/vast-cli/"
-
-[tool.poetry-dynamic-versioning]
-enable = true
-vcs = "git"
-fix-shallow-repository = true
-style = "semver"
-
-[tool.poetry.requires-plugins]
-poetry-dynamic-versioning = { version = ">=1.0.0,<2.0.0", extras = ["plugin"] }
